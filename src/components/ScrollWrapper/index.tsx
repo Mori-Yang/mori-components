@@ -16,6 +16,7 @@ export default function ScrollWrapper({
     startGap = true,
     cubicBezier = "ease",
     transitionDuration = 0.3,
+    ...props
 }: ScrollWrapperProps) {
     const wrapperRef = useRef<HTMLDivElement>(null);
     const viewContainerRef = useRef<HTMLDivElement>(null);
@@ -53,13 +54,13 @@ export default function ScrollWrapper({
     return (
         <div
             id="view_container"
-            // fixed
-            className={`flex w-full h-full  ${
+            className={`flex w-full h-full ${
                 horizontal
                     ? "justify-start items-center left-0"
-                    : "justify-center items-start top-0 "
+                    : "justify-center items-start top-0"
             }`}
             ref={viewContainerRef}
+            {...props}
         >
             <div
                 id="scroll_wrapper"
@@ -89,6 +90,7 @@ export default function ScrollWrapper({
                     return (
                         <div
                             id={`scroll_wrapper__item_${index}`}
+                            key={`scroll_wrapper__item_${index}`}
                             className="flex-none"
                         >
                             {child}

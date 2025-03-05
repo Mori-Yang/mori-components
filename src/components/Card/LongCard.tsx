@@ -1,5 +1,3 @@
-import { Fragment } from "react/jsx-runtime";
-
 interface LongCardContent {
     icon?: React.ReactNode;
     title?: string;
@@ -31,7 +29,7 @@ export const LongCard = ({
         >
             <div id="card_wrapper__content" className="relative px-4 pb-4 pt-6">
                 {content && (
-                    <Fragment>
+                    <>
                         <div id="card_wrapper__content__icon">
                             {content.icon}
                         </div>
@@ -47,7 +45,7 @@ export const LongCard = ({
                         >
                             {content.description}
                         </p>
-                    </Fragment>
+                    </>
                 )}
                 {children}
             </div>

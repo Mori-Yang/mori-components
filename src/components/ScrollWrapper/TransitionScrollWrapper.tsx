@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useWindowResize } from "../../hooks/useWindowResize";
 
-interface ScrollWrapperProps {
+interface TransitionScrollWrapperProps {
     children: React.ReactNode;
     horizontal?: boolean;
     startGap?: boolean;
@@ -10,14 +10,14 @@ interface ScrollWrapperProps {
     transitionDuration?: number;
 }
 
-export default function ScrollWrapper({
+export const TransitionScrollWrapper = ({
     children,
     horizontal = false,
     startGap = true,
     cubicBezier = "ease",
     transitionDuration = 0.3,
     ...props
-}: ScrollWrapperProps) {
+}: TransitionScrollWrapperProps) => {
     const wrapperRef = useRef<HTMLDivElement>(null);
     const viewContainerRef = useRef<HTMLDivElement>(null);
     const [scrollPosition, setScrollPosition] = useState(0);
@@ -64,7 +64,7 @@ export default function ScrollWrapper({
         >
             <div
                 id="scroll_wrapper"
-                className={`flex flex-nowrap items-center ${
+                className={`flex flex-nowrap w-full items-center ${
                     horizontal ? "" : "fixed"
                 } ${
                     horizontal
@@ -72,7 +72,7 @@ export default function ScrollWrapper({
                         : "flex-col overflow-y-auto"
                 } ${horizontal ? "space-x-8" : "space-y-8"} ${
                     startGap ? (horizontal ? "pl-4" : "pt-4") : ""
-                } p-2 shrink-0 
+                } shrink-0 
             `}
                 style={{
                     msOverflowStyle: "none",
@@ -91,7 +91,7 @@ export default function ScrollWrapper({
                         <div
                             id={`scroll_wrapper__item_${index}`}
                             key={`scroll_wrapper__item_${index}`}
-                            className="flex-none"
+                            className="flex-none w-full"
                         >
                             {child}
                         </div>
@@ -100,4 +100,4 @@ export default function ScrollWrapper({
             </div>
         </div>
     );
-}
+};

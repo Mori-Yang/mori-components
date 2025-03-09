@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      developer-icons:
+        specifier: ^5.3.0
+        version: 5.3.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       react:
         specifier: ^19.0.0
         version: 19.0.0
@@ -796,6 +799,12 @@ packages:
     resolution: {integrity: sha512-pGjwhsmsp4kL2RTz08wcOlGN83otlqHeD/Z5T8GXZB+/YcpQ/dgo+lbU8ZsGxV0HIvqqxo9l7mqYwyYMD9bKDg==}
     engines: {node: '>=0.10'}
     hasBin: true
+
+  developer-icons@5.3.0:
+    resolution: {integrity: sha512-8G3AHGxdLeE4VRWariV4ZZ2P4Dfb8iq7lEeIiwN7Rn76OLAfwMnlmZVn3tUGqSuUvgCs49xpIckH/EJW+GpkZA==}
+    peerDependencies:
+      react: ^18.2.0 || ^19.0.0
+      react-dom: ^18.2.0 || ^19.0.0
 
   doctrine@2.1.0:
     resolution: {integrity: sha512-35mSku4ZXK0vfCuHEDAwt55dg2jNajHZ1odvF+8SSr82EsZY4QmXfuWso8oEd8zRhVObSN18aM0CjSdoBX7zIw==}
@@ -2440,6 +2449,11 @@ snapshots:
       object-keys: 1.1.1
 
   detect-libc@1.0.3: {}
+
+  developer-icons@5.3.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
+    dependencies:
+      react: 19.0.0
+      react-dom: 19.0.0(react@19.0.0)
 
   doctrine@2.1.0:
     dependencies:

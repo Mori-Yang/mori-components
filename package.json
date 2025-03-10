@@ -2,7 +2,9 @@
     "name": "mori-components",
     "version": "1.0.0",
     "description": "Some interesting components: React + tailwindcss",
-    "main": "index.js",
+    "main": "./dist/mori-components.umd.js",
+    "module": "./dist/mori-components.es.js",
+    "types": "./dist/index.d.ts",
     "scripts": {
         "dev": "vite",
         "build": "vite build",
@@ -10,11 +12,18 @@
         "lint": "eslint ."
     },
     "type": "module",
+    "peerDependencies": {
+        "react": "^18.0.0 || ^19.0.0",
+        "react-dom": "^18.0.0 || ^19.0.0"
+    },
     "dependencies": {
         "developer-icons": "^5.3.0",
         "react": "^19.0.0",
         "react-dom": "^19.0.0"
     },
+    "files": [
+        "dist"
+    ],
     "devDependencies": {
         "@eslint/js": "^9.18.0",
         "@tailwindcss/vite": "^4.0.9",

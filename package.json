@@ -4,8 +4,8 @@
     "description": "Some interesting components: React + tailwindcss",
     "main": "./dist/mori-components.umd.js",
     "module": "./dist/mori-components.es.js",
-    "types": "./dist/index.d.ts",
-    "scripts": {
+        "types": "./dist/index.d.ts",
+        "scripts": {
         "dev": "vite",
         "build": "vite build",
         "preview": "vite preview",

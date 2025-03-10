@@ -1,4 +1,6 @@
 import DeveloperIcon from "developer-icons";
+import { useRef } from "react";
+import { useHoverRotate } from "../../hooks/useHoverRotate";
 import DeveloperIconWrapper from "../DeveloperIconWrapper/DeveloperIconWrapper";
 
 interface BlogCardProps {
@@ -16,6 +18,9 @@ export const BlogCard: React.FC<BlogCardProps> = ({
     tagIcons,
     tagList,
 }) => {
+    const previewRef = useRef<HTMLDivElement>(null);
+    useHoverRotate(previewRef);
+
     return (
         <div
             id="blog_card_wrapper"
@@ -24,6 +29,7 @@ export const BlogCard: React.FC<BlogCardProps> = ({
             max-md:h-[560px] max-md:mt-[40px] max-md:max-w-[640px]"
         >
             <div
+                ref={previewRef}
                 id="blog_card_wrapper__img"
                 className="w-[400px] aspect-4/3 shrink-0
                 bg-zinc-300/20 dark:bg-zinc-800/20 shadow-lg shadow-zinc-900/20 dark:shadow-zinc-400/20 rounded-2xl overflow-hidden

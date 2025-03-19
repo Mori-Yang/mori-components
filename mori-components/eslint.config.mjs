@@ -2,7 +2,6 @@ import pluginJs from '@eslint/js';
 import pluginReact from 'eslint-plugin-react';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
-import stylistic from '@stylistic/eslint-plugin';
 
 /**
  * 使用eslint v9 , 确保VSCode的eslint插件版本高于3.0.5
@@ -24,7 +23,7 @@ export default [
     pluginJs.configs.recommended,
     ...tseslint.configs.recommended,
     {
-    /** add custom rules here */
+        /** add custom rules here */
         rules: {
             '@typescript-eslint/no-unused-vars': [
                 'warn',
@@ -42,14 +41,6 @@ export default [
     {
         rules: {
             'react/prop-types': ['off'],
-        },
-    },
-    stylistic.configs.recommended,
-    {
-        rules: {
-            '@stylistic/semi': ['error', 'always'],
-            '@stylistic/indent': ['error', 4],
-            '@stylistic/jsx-indent-props': ['error', 4],
         },
     },
 ];

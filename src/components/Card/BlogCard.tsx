@@ -1,13 +1,17 @@
 import DeveloperIcon from 'developer-icons';
-import { useRef } from 'react';
+import { ReactNode, useRef } from 'react';
 import { useHoverRotate } from '../../hooks/useHoverRotate';
 import DeveloperIconWrapper from '../DeveloperIconWrapper/DeveloperIconWrapper';
+import TextEllipsis from '../Text/TextEllipsis';
 
 interface BlogCardProps {
     previewSrc?: string
     tagIcons?: (keyof typeof DeveloperIcon)[]
     tagList?: string[]
     toBlog?: (e: React.MouseEvent) => void
+    title?: string | ReactNode
+    decs?: string
+    time?: string | ReactNode
 }
 /**
  * 预览图比例4：3。
@@ -17,6 +21,9 @@ export const BlogCard: React.FC<BlogCardProps> = ({
     toBlog = () => {},
     tagIcons,
     tagList,
+    title,
+    decs,
+    time,
 }) => {
     const previewRef = useRef<HTMLDivElement>(null);
     useHoverRotate(previewRef);
@@ -57,18 +64,16 @@ export const BlogCard: React.FC<BlogCardProps> = ({
                 id="blog_card_wrapper__content"
                 className="absolute right-8 w-[340px] max-md:bottom-8 max-md:left-1/2 max-md:-translate-x-1/2"
             >
-                <span className="text-zinc-500 font-medium">2025-03-08</span>
+                <span className="text-zinc-500 font-medium">{time}</span>
                 <p className="text-4xl font-semibold underline underline-offset-8 mb-8 mt-4">
-                    Title
+                    {title}
                 </p>
-                <div
+                <TextEllipsis
                     id="blog_card_wrapper__content__desc"
-                    className="font-light"
-                >
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                    euismod, nisl eget ultricies ultricies, nunc nisl ultricies,
-                    nunc nisl nisl, nunc nisl nisl.
-                </div>
+                    className="font-light h-[96px]"
+                    maxLine={4}
+                    text={decs}
+                />
                 <div
                     id="blog_card_wrapper__content__tags"
                     className="flex space-x-2 absolute right-4"

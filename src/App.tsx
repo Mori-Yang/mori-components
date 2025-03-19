@@ -24,6 +24,9 @@ const App = () => {
                     }}
                 />
                 <BlogCard
+                    title="Test"
+                    time="2025-05-14"
+                    decs="Lorem ipsum, dolor sit amet consectetur adipisicing elit. In neque id, praesentium nisi laborum dolor vel quas laudantium quam eius ea maiores voluptatem dicta sunt quisquam vero laboriosam soluta accusantium."
                     previewSrc="https://picsum.photos/800/600"
                     tagIcons={['Zod', 'React']}
                 />

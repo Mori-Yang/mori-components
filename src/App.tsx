@@ -3,7 +3,7 @@ import { LongCard } from './components/Card/LongCard';
 import DeveloperIconWrapper from './components/DeveloperIconWrapper/DeveloperIconWrapper';
 import { TransitionScrollWrapper } from './components/ScrollWrapper/TransitionScrollWrapper';
 import { useToggleTheme } from './hooks/useToggleTheme';
-// test
+
 const App = () => {
     const { isDark, toggleTheme } = useToggleTheme();
     return (
